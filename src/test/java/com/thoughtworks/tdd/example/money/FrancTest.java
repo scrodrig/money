@@ -24,7 +24,7 @@ public class FrancTest {
     }
 
     @Test
-    public void testFrancMultiplication() {
+    public void shouldFrancMultiplicationsBeValid() {
         Franc five= new Franc(5);
         assertThat(new Franc(10), is(five.times(2)));
         assertThat(new Franc(15), is(five.times(3)));
