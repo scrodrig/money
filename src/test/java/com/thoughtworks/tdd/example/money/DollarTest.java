@@ -3,9 +3,9 @@ package com.thoughtworks.tdd.example.money;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertFalse;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static junit.framework.Assert.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 public class DollarTest {
 
@@ -13,16 +13,16 @@ public class DollarTest {
     public void shouldReturnTheRightValueWhenYouMultiplyTheAmount() {
         Dollar five = new Dollar(5);
         Dollar product = five.times(2);
-        assertThat(product.amount, equalTo(10));
+        assertThat(product, is(new Dollar(10)));
     }
 
     @Test
-    public void shouldNotAlterateWhenMultiplyTheAmountAgain() {
+    public void shouldReturnTheRightValueWhenMultiplyTheAmountAgain() {
         Dollar five = new Dollar(5);
-        Dollar product = five.times(2);
-        assertThat(product.amount, equalTo(10));
-        product = five.times(3);
-        assertThat(product.amount, equalTo(15));
+        Dollar ten = new Dollar(10);
+        Dollar fifteen = new Dollar(15);
+        assertThat(ten, is(five.times(2)));
+        assertThat(fifteen, is(five.times(3)));
     }
 
     @Test
