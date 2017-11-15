@@ -39,11 +39,6 @@ public class DollarTest {
         assertFalse(five.equals(six));
     }
 
-    @Test
-    public void testFrancMultiplication() {
-        Franc five= new Franc(5);
-        assertThat(new Franc(10), is(five.times(2)));
-        assertThat(new Franc(15), is(five.times(3)));
-    }
+
 
 }
