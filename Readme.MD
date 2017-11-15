@@ -3,9 +3,9 @@
 Project developed using book's guide **TDD by Example** of Kent Beck
 
 
-## Use
+## Tools & Frameworks
 
-The book use some antique dependencies this example use:
+The book use some antique dependencies. This example uses:
 
 - Java 8
 - Gradle wrapper
