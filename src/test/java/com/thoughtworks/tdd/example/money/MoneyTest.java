@@ -2,14 +2,26 @@ package com.thoughtworks.tdd.example.money;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 
 public class MoneyTest {
 
     @Test
     public void shouldNotBeEqualFrancAndDollar() throws Exception {
-        Franc franc = new Franc(5);
-        Dollar dollar = new Dollar(5);
+        Money franc = Money.franc(5);
+        Money dollar = Money.dollar(5);
         assertFalse(franc.equals(dollar));
+    }
+
+    @Test
+    public void shouldBeEqualWhenCurrencyIsRequestedForDollars(){
+        assertThat(Money.dollar(1).currency(), is("USD"));
+    }
+
+    @Test
+    public void shouldBeEqualWhenCurrencyIsRequestedForFrancs(){
+        assertThat(Money.franc(1).currency(), is("CHF"));
     }
 }

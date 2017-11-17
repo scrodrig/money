@@ -13,7 +13,7 @@ public class DollarTest {
     public void shouldReturnTheRightValueWhenYouMultiplyTheAmount() {
         Money five = Money.dollar(5);
         Money product = five.times(2);
-        assertThat(product, is(new Dollar(10)));
+        assertThat(product, is(Money.dollar(10)));
     }
 
     @Test
