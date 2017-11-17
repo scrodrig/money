@@ -11,23 +11,23 @@ public class FrancTest {
 
     @Test
     public void shouldBeTrueWhenAFrancEqualToAnother() {
-        Franc five = new Franc(5);
-        Franc anotherFive = new Franc(5);
+        Money five = Money.franc(5);
+        Money anotherFive = Money.franc(5);
         assertTrue(five.equals(anotherFive));
     }
 
     @Test
     public void shouldBeFalseWhenAFrancIsNotEqualToAnother() {
-        Franc five = new Franc(5);
-        Franc six = new Franc(6);
+        Money five = Money.franc(5);
+        Money six = Money.franc(6);
         assertFalse(five.equals(six));
     }
 
     @Test
     public void shouldFrancMultiplicationsBeValid() {
-        Franc five= new Franc(5);
-        assertThat(new Franc(10), is(five.times(2)));
-        assertThat(new Franc(15), is(five.times(3)));
+        Money five= Money.franc(5);
+        assertThat(Money.franc(10), is(five.times(2)));
+        assertThat(Money.franc(15), is(five.times(3)));
     }
 
 }

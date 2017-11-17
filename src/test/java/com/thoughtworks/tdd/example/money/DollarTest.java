@@ -11,31 +11,31 @@ public class DollarTest {
 
     @Test
     public void shouldReturnTheRightValueWhenYouMultiplyTheAmount() {
-        Dollar five = new Dollar(5);
-        Dollar product = five.times(2);
+        Money five = Money.dollar(5);
+        Money product = five.times(2);
         assertThat(product, is(new Dollar(10)));
     }
 
     @Test
     public void shouldReturnTheRightValueWhenMultiplyTheAmountAgain() {
-        Dollar five = new Dollar(5);
-        Dollar ten = new Dollar(10);
-        Dollar fifteen = new Dollar(15);
+        Money five = Money.dollar(5);
+        Money ten = Money.dollar(10);
+        Money fifteen = Money.dollar(15);
         assertThat(ten, is(five.times(2)));
         assertThat(fifteen, is(five.times(3)));
     }
 
     @Test
     public void shouldBeTrueWhenADollarEqualToAnother() {
-        Dollar five = new Dollar(5);
-        Dollar anotherFive = new Dollar(5);
+        Money five = Money.dollar(5);
+        Money anotherFive = Money.dollar(5);
         assertTrue(five.equals(anotherFive));
     }
 
     @Test
     public void shouldBeFalseWhenADollarIsNotEqualToAnother() {
-        Dollar five = new Dollar(5);
-        Dollar six = new Dollar(6);
+        Money five = Money.dollar(5);
+        Money six = Money.dollar(6);
         assertFalse(five.equals(six));
     }
 
