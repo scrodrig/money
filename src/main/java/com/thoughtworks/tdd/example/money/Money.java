@@ -1,6 +1,6 @@
 package com.thoughtworks.tdd.example.money;
 
- class Money {
+public class Money implements Expression {
 
     protected int amount;
     protected String currency;
@@ -18,20 +18,24 @@ package com.thoughtworks.tdd.example.money;
         return new Money(amount, "CHF");
     }
 
-     public Money times(int multiplier) {
-         return new Money(amount * multiplier, currency);
-     }
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
+    }
 
-    public String currency(){
-        return  currency;
+    public String currency() {
+        return currency;
     }
 
     public String toString() {
         return amount + " " + currency;
     }
 
-     public boolean equals(Object object) {
-         Money money = (Money) object;
-         return amount == money.amount && currency().equals(money.currency());
-     }
- }
+    public boolean equals(Object object) {
+        Money money = (Money) object;
+        return amount == money.amount && currency().equals(money.currency());
+    }
+
+    public Expression plus(Money addend) {
+        return new Money(amount + addend.amount, currency);
+    }
+}
